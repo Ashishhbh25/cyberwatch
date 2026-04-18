@@ -648,11 +648,6 @@ body {
 .sim-btn.ddos { background: var(--alert-amber); }
 .sim-btn.phishing { background: var(--accent-blue); }
 .sim-btn.malware { background: #aa00ff; }
-  gap: 1.5rem;
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 0 2rem 3rem;
-}
 
 .insight-card {
   background: var(--bg-card);

@@ -1,9 +1,9 @@
 import { useState, useEffect, useCallback } from 'react'
 import axios from 'axios'
-import { FaShieldAlt, FaSearch, FaExclamationTriangle, FaIndustry, FaCalendar, FaMapMarkerAlt, FaUserSecret, FaServer, FaFilter, FaTimes, FaHdd, FaLock, FaEye, FaBolt, FaVirus, FaEnvelope, FaBell, FaShare, FaTwitter, FaLinkedin, FaWhatsapp, FaLink, FaMoneyBillWave, FaCrown, FaChartLine, FaMap, FaRadar, FaGamepad, FaFilePdf, FaCheck, FaTimesCircle, FaBug, FaWarning, FaExternalLinkAlt } from 'react-icons/fa'
+import { FaShieldAlt, FaSearch, FaExclamationTriangle, FaIndustry, FaCalendar, FaMapMarkerAlt, FaUserSecret, FaServer, FaFilter, FaTimes, FaHdd, FaLock, FaEye, FaBolt, FaVirus, FaEnvelope, FaBell, FaShare, FaTwitter, FaLinkedin, FaWhatsapp, FaLink, FaMoneyBillWave, FaCrown, FaChartLine, FaDotCircle, FaGamepad, FaFilePdf, FaCheck, FaTimesCircle, FaBug, FaExternalLinkAlt } from 'react-icons/fa'
 import './App.css'
 
-const API_BASE = 'http://localhost:8000/api'
+const API_BASE = 'https://cyberwatch-backend-9xak.onrender.com/api'
 
 const THREAT_ACTORS = [
   { name: "LockBit", alias: "LockBit 5.0", color: "#ff3366", attacks: 150, specialty: "Double extortion", countries: 140 },
@@ -233,7 +233,7 @@ function App() {
       <section className="unique-features">
         <div className="feature-nav">
           <button className={activeFeature === 'dashboard' ? 'active' : ''} onClick={() => setActiveFeature('dashboard')}>
-            <FaRadar /> Live Dashboard
+            <FaChartLine /> Live Dashboard
           </button>
           <button className={activeFeature === 'risk' ? 'active' : ''} onClick={() => setActiveFeature('risk')}>
             <FaSearch /> Risk Checker
@@ -379,13 +379,13 @@ function App() {
                   </span>
                   <span className="affected">{vuln.affected}</span>
                   <span className={`exploit-status ${vuln.exploit.toLowerCase()}`}>
-                    {vuln.exploit === 'Active' ? <><FaWarning /> Active</> : vuln.exploit === 'Patched' ? <FaCheck /> Patched : <FaTimesCircle /> No}
+                    {vuln.exploit === 'Active' ? <><FaExclamationTriangle /> Active</> : vuln.exploit === 'Patched' ? <><FaCheck /> Patched</> : <><FaTimesCircle /> No</>}
                   </span>
                 </div>
               ))}
             </div>
             <div className="zeroday-info">
-              <FaWarning /> <strong>Warning:</strong> These vulnerabilities are actively exploited by threat actors. Update your systems immediately.
+              <FaExclamationTriangle /> <strong>Warning:</strong> These vulnerabilities are actively exploited by threat actors. Update your systems immediately.
             </div>
           </div>
         )}
