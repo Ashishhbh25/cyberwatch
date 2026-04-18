@@ -603,17 +603,18 @@ function App() {
         <div className="share-buttons">
           <button className="share-btn twitter"><FaTwitter /> Twitter</button>
           <button className="share-btn linkedin"><FaLinkedin /> LinkedIn</button>
-          <button className="share-btn whatsapp"><FaWhatsapp /> WhatsApp</button>
+          <a href="https://wa.me/918709748884?text=Hi%20CyberWatch%20India,%20I%20want%20premium%20subscription!" className="share-btn whatsapp"><FaWhatsapp /> WhatsApp</a>
           <button className="share-btn link"><FaLink /> Copy Link</button>
         </div>
       </section>
 
       <footer className="footer">
         <p>India Cyber Threat Dashboard - Monitoring {stats?.total_attacks_2025 ? formatNumber(stats.total_attacks_2025) : '265M'}+ cyber attacks</p>
+        <p className="footer-contact">Contact: +91 8709748884 | Email: contact@ashishtech.in</p>
         <p className="footer-note">Data sourced from public reports and security research</p>
         <div className="footer-links">
-          <a href="#">Advertise With Us</a>
-          <a href="#">API Access</a>
+          <a href="https://wa.me/918709748884">WhatsApp</a>
+          <a href="mailto:contact@ashishtech.in">Email Us</a>
           <a href="#">Privacy Policy</a>
         </div>
       </footer>
