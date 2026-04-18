@@ -532,69 +532,11 @@ function App() {
         </div>
       )}
 
-      <section className="newsletter-section">
-        <div className="newsletter-content">
-          <div className="newsletter-text">
-            <FaEnvelope className="newsletter-icon" />
-            <h3>Get Daily Cyber Threat Alerts</h3>
-            <p>Subscribe for free daily alerts on latest cyber attacks in India</p>
-          </div>
-          <form className="newsletter-form" onSubmit={async (e) => { 
-            e.preventDefault()
-            try {
-              await axios.post(`${API_BASE}/subscribe/`, { email: emailSubscribe })
-              setSubscribeMsg('Thanks! You will receive alerts soon.')
-              setEmailSubscribe('')
-            } catch (err) {
-              setSubscribeMsg('Error! Try again.')
-            }
-          }}>
-            <input 
-              type="email" 
-              placeholder="Enter your email" 
-              value={emailSubscribe}
-              onChange={(e) => setEmailSubscribe(e.target.value)}
-              required
-            />
-            <button type="submit"><FaBell /> Subscribe Free</button>
-          </form>
-          {subscribeMsg && <p className="subscribe-msg">{subscribeMsg}</p>}
-        </div>
-      </section>
-
-      <section className="ads-section">
-        <div className="ad-banner">
-          <span className="ad-label">Advertisement</span>
-          <div className="ad-content">
-            <h4>Protect Your Business from Cyber Attacks</h4>
-            <p>Get enterprise-grade security solutions. Contact us for a free security audit.</p>
-            <button>Get Free Quote</button>
-          </div>
-        </div>
-      </section>
-
-      <section className="premium-section">
-        <div className="premium-card">
-          <FaCrown className="premium-icon" />
-          <h3>Premium Threat Intelligence</h3>
-          <ul>
-            <li>Real-time API Access</li>
-            <li>Dark Web Monitoring</li>
-            <li>Custom Alerts</li>
-            <li>Weekly Reports</li>
-          </ul>
-          <div className="premium-price">₹150/month</div>
-          <button className="premium-btn" onClick={async () => {
-              const email = prompt('Enter your email for premium access:')
-              if (email) {
-                try {
-                  await axios.post(`${API_BASE}/premium-signup/`, { email, plan: 'premium' })
-                  alert('Thanks! We will contact you for payment.')
-                } catch (err) {
-                  alert('Error! Try again.')
-                }
-              }
-            }}>Upgrade Now</button>
+      <section className="info-section">
+        <div className="info-card">
+          <FaShieldAlt className="info-icon" />
+          <h3>About Cyber Watch India</h3>
+          <p>We track real-time cyber attacks and ransomware incidents across India to help organizations understand emerging threats and stay protected.</p>
         </div>
       </section>
 
